@@ -1,0 +1,25 @@
+﻿{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{% block title %}Flasky {% endblock %}
+
+
+
+{% block page_content %}
+
+{{ wtf.quick_form(form) }}
+
+
+
+
+
+<br> </h1>
+
+<h1> 该库房无本商品信息！ </h1> 
+
+  
+
+{% endblock %}

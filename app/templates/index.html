@@ -1,0 +1,60 @@
+﻿{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+
+{% block page_content %}
+
+
+
+
+<br>
+<br>
+<br>
+<br
+<div>
+
+
+
+<ul>
+<h> {{ d["cityInfo"]["parent"] }}, {{ d["cityInfo"]["city"] }} </h>
+<br>
+ <li  style="color:green">{{ d["data"]["forecast"][0]["ymd"] }}, {{  d["data"]["forecast"][0]["week"] }} 
+ {{ d["data"]["forecast"][0]["high"] }}, {{  d["data"]["forecast"][0]["low"] }} 
+{{ d["data"]["forecast"][0]["type"] }} 
+{{ d["data"]["forecast"][0]["notice"] }}
+</li>
+<br>
+</ul>
+<ol>
+{% for i in [1, 2, 3, 4, 5, 6] %}
+<li>{{ d["data"]["forecast"][i]["ymd"] }}, {{  d["data"]["forecast"][i]["week"] }} 
+ {{ d["data"]["forecast"][i]["high"] }}, {{  d["data"]["forecast"][i]["low"] }} 
+ {{ d["data"]["forecast"][i]["type"] }}
+</li>
+<br>
+{% endfor %}
+
+</ol>
+
+<ul>  <li>{{ d["data"]["yesterday"]["ymd"] }},{{  d["data"]["yesterday"]["week"] }}, {{  d["data"]["yesterday"]["high"] }}, {{  d["data"]["yesterday"]["low"] }}, {{  d["data"]["yesterday"]["type"] }} </li> </ul>
+
+ 
+ 
+</div>
+
+{% endblock %}
+
+
+
+
+
+{% block scripts %}
+
+{{ super() }}
+
+{{ pagedown.include_pagedown() }}
+
+{% endblock %}

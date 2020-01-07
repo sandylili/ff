@@ -1,0 +1,75 @@
+﻿{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{% block title %}Flasky {% endblock %}
+
+
+
+{% block page_content %}
+
+
+
+<form  method="post">
+    
+
+ {{ form.hidden_tag() }}
+<table >
+<tr>
+<th>{{ form.item_list[0].idd.label }}</th>
+<th>{{ form.item_list[0].cnn.label }}</th>
+<th>{{ form.item_list[0].number.label }}</th>
+</tr>
+{% for f in form.item_list %}
+ 
+<tr>
+<td align="center">{{ f.idd }}</td>
+<td align="center">{{ f.cnn }}</td>
+<td align="center">{{ f.number }}</td>
+</tr>
+{%endfor%}
+
+</table>
+  <div style="position:fixed;left:393px;top:515px;"  > 
+{{ form.submit}}
+
+
+{{ form.submit1}}
+{{ form.submit2}}
+</div>
+</form>
+
+
+{% if a  %}
+
+<table border="1" cellpadding="10">
+<tr>
+<th>good_id</th>
+<th>storehouse_id</th>
+<th>number</th>
+<th>outORin</th>
+<th>operation</th>
+</tr>
+{% for f in a %}
+
+<tr>
+{% for i in f %}
+<td align="center">
+{{ i }}
+</td>
+{%endfor%}
+</tr>
+
+{%endfor%}
+</table>
+
+<br> </h1>
+
+
+{% endif %}
+ 
+  
+
+{% endblock %}

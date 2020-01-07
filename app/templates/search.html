@@ -1,0 +1,43 @@
+﻿{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{% block title %}Flasky {% endblock %}
+
+
+{% block page_content %}
+
+{{ wtf.quick_form(form) }}
+
+
+{% if number %}
+<table border="1" cellpadding="10">
+<tr>
+<th>物料编号 </th>
+<th>物料名称 </th>
+<th>物料型号 </th>
+<th>库房编号</th>
+<th>库房名称 </th>
+<th>现存数量 </th>
+
+</tr>
+
+{% for a in number %}
+
+<tr>
+<td align="center">{{ a.good.goodid}} </td>
+<td align="center"> {{ a.good.goodname}}</td>
+<td align="center"> {{ a.good.goodmodel}} </td>
+<td align="center">{{ a.storehouse_id}} </td>
+<td align="center">{{ a.SH.SHname}} </td>
+<td align="center">{{ a.nownumber}} </td>
+</tr>
+{% endfor %}
+  
+<br><br><br>
+{% endif %}
+  
+ 
+{% endblock %}

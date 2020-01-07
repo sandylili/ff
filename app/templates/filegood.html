@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block title %}Flasky {% endblock %}
+
+
+
+{% block page_content %}
+
+
+
+<div>
+
+<form role="form" method="post" enctype="multipart/form-data">
+{{ fom.hidden_tag() }}
+{{ fom.wenjianname.lable }}
+{{ fom.wenjianname() }}
+{{ fom.submit() }}
+
+</form>
+
+
+
+</div>
+{% endblock %}
